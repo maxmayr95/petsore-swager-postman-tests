@@ -7,12 +7,51 @@
 	"item": [
 		{
 			"name": "Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "444fa051-b8ab-468f-b0f8-f97e2247c9a8",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1);",
+							"});",
+							"",
+							"",
+							"var schema =  ",
+							"   {",
+							"  \"type\": \"object\",",
+							"  \"definitions\": {},",
+							"  \"$schema\": \"http://json-schema.org/draft-06/schema#\",",
+							"  \"items\": {",
+							"    \"Operated\": \"array\"",
+							"  }",
+							"",
+							"};",
+							"",
+							""
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": ""
+					"raw": "https://petstore.swagger.io/v2/store/inventory",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"store",
+						"inventory"
+					]
 				}
 			},
 			"response": []
